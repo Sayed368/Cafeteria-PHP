@@ -204,14 +204,8 @@ class ORM{
 }
 
 
-// define('DB_HOST','127.0.0.0.1');
-// define('DB_USER','root');
-// define('DB_PASSWORD','root');
-// define('DB_NAME','students_data');
-// define('DB_PORT','3307');
-// $db=$newconnection->connect('students_data','127.0.0.1','3306','root','root');
 
 $newconnection= new ORM();
-$db=$newconnection->connect('testorder','127.0.0.1','3306','root','root');
+$db=$newconnection->connect('cafeteria1','127.0.0.1','3306','root','root');
 //var_dump($newconnection->testconn());
 ?>

@@ -52,7 +52,7 @@
 
 
 
-<?php $col_arr=['date','order_id','status','room','user_name','ext','note'];
+<?php $col_arr=['date','order_id','status','room','user_name','ext','user_info.img_name','note'];
                       $table_arr=['order_info','user_info'];
                       $condition_arr=['user_fk'=>'user_id'];
                       $data = $newconnection->selectMultiTabls($col_arr,$table_arr,$condition_arr);  ?>
@@ -76,7 +76,7 @@
                 <div class="card">
                     <div class="box">
                         <div class="img">
-                            
+                        <!-- <img src="<?php //echo '../users_images'.$row['img_name'] ?>"> -->
                             <img src="tea.jpeg">
                         </div>
                         <h2>Name : <?php echo $row['user_name'] ?><br><span>date : <?php echo $row['date'] ?></span>
@@ -100,7 +100,7 @@
                         <div class="product-card">
                             <div class="row justify-content-around">
                                 <div class="col-5">
-                                <?php// echo "<img class='product-img' alt='profile pic' src='../admin/addproduct/images/".$row1['img_name']."'/>";?>
+                                <?php// echo "<img class='product-img' alt='profile pic' src='../product_images/".$row1['img_name']."'/>";?>
                                     <!-- <img class="product-img" src="coffee.jpg" alt=""> -->
                                 </div>
                                 <div class="col-6 product-detail">

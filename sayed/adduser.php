@@ -33,7 +33,7 @@ require_once('../function/db.php');
 			$fileinfo=explode('.',$filename);  //array[filename , fileextention]
 			$extention=end($fileinfo); //last index in file info array 
 			
-			$img_dir='user_img/'.$filename;
+			$img_dir='../users_images/'.$filename;
 
 			if(checkEmpty($name)&&checkEmpty($email)&&checkEmpty($password)&&checkEmpty($confpassword)&&checkEmpty($room)&&checkEmpty($ext)&&checkEmpty($uploadfile)&&checkEmpty($type)){
 
@@ -50,7 +50,7 @@ require_once('../function/db.php');
 							// echo $fileinfo.'<br>';
 							// echo $extention.'<br>';
 							// echo $img_dir;
-							// move_uploaded_file($filetmpname,$filename);
+							move_uploaded_file($filetmpname,$img_dir);
 
 							// $passwordnew=password_hash($password,PASSWORD_DEFAULT);
 							$passwordnew=$password;
