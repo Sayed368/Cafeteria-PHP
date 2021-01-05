@@ -145,46 +145,49 @@ require_once('../function/db.php');
 
     <!-- Main CSS-->
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/main.css" rel="stylesheet" media="all">
 </head>
 
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="logo"><a href="#"><img src="img/logo.png"></a></div>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="logo"><a href="#"><img src="../images/logo.png  "></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"> 
-            <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Users</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">My orders</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">checks</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">admin</a>
-            </li>
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../AllProducts/all_product.php">Products</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="view_order.php">orders</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="../checks/checks.php">checks</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link btn-danger" href="#">admin</a>
+                     </li>
         </ul>
     </div>
 </nav>
 
-<div class="row mt-5">
+<!-- <div class="row mt-5">
     <div class="col-sm-12">
         <h1 class="gallery_taital">All Orders</h1>
     </div>
 </div> -->
 
-
-<body>
     <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
         <div class="wrapper wrapper--w960">
             <div class="card card-2">
@@ -201,13 +204,13 @@ require_once('../function/db.php');
                         </div>
 
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <input class="input--style-2 " type="password" placeholder="Password..." name="password">
                                     
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <input class="input--style-2 " type="password" placeholder="Confirm Password ..." name="confpassword">
                                     
@@ -216,14 +219,14 @@ require_once('../function/db.php');
                         </div>
 
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <input class="input--style-2 " type="number" placeholder="Room ..." name="room" min="1">
                                     
                                 </div>
                                 
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                     <div class="input-group">
                                         <input class="input--style-2 " type="number" placeholder="Ext ..." name="ext" min="1">
                                         
@@ -233,10 +236,10 @@ require_once('../function/db.php');
                         </div>
 
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="type">
+                                    <div class="rs-select2 js-select-simple w-100">
+                                        <select name="type" class="w-100 input--style-2">
                                             <!-- <option disabled="disabled" selected="selected">type</option> -->
                                             <option>user</option>
                                             <option >admin</option>
@@ -247,7 +250,7 @@ require_once('../function/db.php');
                                 </div>
                                 
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     
                                     <input class="input--style-2" type="file" value="image"  name="img">
@@ -259,7 +262,7 @@ require_once('../function/db.php');
                         <div class="p-t-30">
                             <button class="btn btn--radius btn--green" name="submit" type="submit">Add</button>
                             <span class="text-danger ml-5" style="color: red; font-size: 16px;"><?php echo $error; ?></span>
-                            <span class="text-danger ml-5" style="color: green; font-size: 16px;"><?php echo $success; ?></span>
+                            <span class="text-success ml-5" style="color: green; font-size: 16px;"><?php echo $success; ?></span>
                         </div>
                         
                     </form>
@@ -269,7 +272,7 @@ require_once('../function/db.php');
     </div>
 
 
-    <!-- <div class="footer_section layout_padding">
+    <div class="footer_section layout_padding">
     <div class="container">
     <div class="row">
         <div class="col-lg-3 col-sm-6">
@@ -316,7 +319,7 @@ require_once('../function/db.php');
         </div>
     </div>
     </div>
-</div> -->
+</div>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -326,6 +329,8 @@ require_once('../function/db.php');
     <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->

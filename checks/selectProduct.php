@@ -23,9 +23,9 @@ if($_POST['ID'])
     foreach ($rows as $row) {
 
 ?>
- <div style="float:left;padding:20px; ">
+ <div style="float:left;padding:20px;">
  <!-- <img  style="width:70px;height:70px;" src=".'../../assets/images/'.$row['img_dir']."> -->
- <img alt='profile pic' src= "../../admin/add product/images/<?php echo $row['img_name'] ?>" height=100 width=100 />
+ <img alt='profile pic' src= "../addProduct/images/<?php echo $row['img_name'] ?>" height=100 width=100 style="border-radius:50%"/>
  <br>
  <p><?php echo $row["name"]."<br>" ?></P>
  <p><?php echo $row["price"]."&nbspEGP"."<br>" ?></P>

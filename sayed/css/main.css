@@ -167,6 +167,12 @@ h6 {
 
 .bg-red {
   background: #f76d37;
+  background:url("../../images/gong-ty-lCHdvEMLwBk-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  
 }
 
 /* ==========================================================================
@@ -654,6 +660,7 @@ a {
 
 .location_text li a {
   color: #ffffff;
+  
 }
 
 .location_text li a:hover {

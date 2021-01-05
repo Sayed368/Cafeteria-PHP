@@ -1,7 +1,8 @@
 <?php
 
-        $conn = mysqli_connect("localhost", "root", "medohadedo", "phpdb");
-        // $conn = mysqli_connect("localhost", "root", "root", "cafeteria1");
+        // $conn = mysqli_connect("localhost", "root", "medohadedo", "phpdb");
+        $conn = mysqli_connect("localhost", "root", "root", "testorder");
+        
                  echo $_GET["delete"] ;
         if(isset($_GET["delete"])){
 

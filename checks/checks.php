@@ -26,26 +26,26 @@
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active"> 
-                        <a class="nav-link" href="#">Home</a>
+               <ul class="navbar-nav ml-auto">
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../AllProducts/all_product.php">Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Users</a>
+                        <a class="nav-link " href="../sayed/view_order.php">orders</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">My orders</a>
-                     </li>
-                     <li class="nav-item">
+                     <li class="nav-item active">
                         <a class="nav-link" href="#">checks</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">admin</a>
+                        <a class="nav-link btn-danger" href="#">admin</a>
                      </li>
-                  </ul>
+               </ul>
                </div>
             </nav>
 
@@ -65,8 +65,8 @@
                         <div class="input-group-prepend">
                         <span class="input-group-text">Date</span>
                         </div>
-                        <input type="date" class="form-control" id='dateFrom'>
-                        <input type="date" class="form-control" id='dateTo'>
+                        <input type="date" class="form-control" id='dateFrom' style="border:2px solid #d33a11; ">
+                        <input type="date" class="form-control" id='dateTo' style="border:2px solid #d33a11; ">
                     </div>  
                     </div>
                     </form>
@@ -80,7 +80,7 @@
                      
                      <label for="inputState">List</label>
                       <?php  echo 
-                      "<select id='select' class='form-control'>User Name</option>"; 
+                      "<select id='select' class='form-control' style='border:2px solid #d33a11;'>User Name</option>"; 
                      foreach ($db->query($sqlD) as $row){
                            echo "<option value=".$row['user_id']." >".$row['user_name']."</option>"; 
                                }

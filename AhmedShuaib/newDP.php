@@ -1,14 +1,15 @@
 <?php
+session_start();
   $count=0;
   $query="" ;
-  $conn = mysqli_connect("localhost", "root", "medohadedo", "phpdb");
+  $conn = mysqli_connect("localhost", "root", "root", "testorder");
     if(!$conn) {
        die("Connection Failed:" .mysqli_connect_error() ) ;
     }
           // SELECT status,date,amount FROM order_info WHERE user_fk = 26 AND date BETWEEN ' 2020-12-02 22:13:00' AND '2020-12-17 21:27:00' order by date
                      
-      
-      $query=mysqli_query($conn,"SELECT status,date,amount,order_id  FROM order_info where user_fk = 11 " ) ;
+         //  var_dump($_SESSION['user_id']);
+      $query=mysqli_query($conn,"SELECT status,date,amount,order_id  FROM order_info where user_fk=".$_SESSION['user_id'] ) ;
       $count=mysqli_num_rows($query) ;
        
     
@@ -20,7 +21,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/bootstrap.min.css" >
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="orderstyle.css" >
     
@@ -34,36 +35,37 @@
    
   <!-- navbar -->
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-               <div class="logo"><a href="#"><img src="logo.png"></a></div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="container">
+               <div class="logo"><a href="#"><img src="../images/logo.png"></a></div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active"> 
-                        <a class="nav-link" href="#">Home</a>
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../home.php">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="../Ahmedtarek/User/index.php">Order Now</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Users</a>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="#">My Orders</a>
                      </li>
-                     <li class="nav-item">
+                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">My orders</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#">checks</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">admin</a>
+                     <li class="nav-item"> -->
+                        <a class="nav-link btn btn-danger" href="#"><?php echo $_SESSION['user_name']; ?> </a>
                      </li>
                   </ul>
-               </div>
-               </div>
-            </nav>
+               
+         
+   </div>
+</nav>
   
             <br><br><br><br>
 
@@ -75,14 +77,14 @@
 <div class="container">
 <form  method="post">
      <div class="row">
-     <div class="col-5">
-    <input type="date"  name="FromDate" id="from" class="form-control" style="border:none; " ></div>
-    <div class="col-5">
-    <input type="date" name="ToDate" id="to" class="form-control" style="border:none;"></div>
+     <div class="col-6">
+    <input type="date"  name="FromDate" id="from" class="form-control" style="border:2px solid #d33a11;" ></div>
+    <div class="col-6">
+    <input type="date" name="ToDate" id="to" class="form-control" style="border:2px solid #d33a11;"></div>
     </div><br>
-    <div class="row">
+    <div class="row justify-content-center">
      <div class=" col-6 ">
-    <input type="submit" name="search" id="search" value="SearchDate...." class="form-control "  > 
+    <input type="submit" name="search" id="search" value="Search Date" class="form-control font-weight-bolder"  style="border:2px solid #d33a11; background-color:#d33a11; color:#fff; color-weight:bold"> 
     </div>
     </div>
     <br>
@@ -95,14 +97,14 @@
                                <th><center>View</center></th> 
                                <th><center>Status</center></th>
                                <th><center>Amount</center></th>
-                               <th><center>Action</center></th> </tr>" ;
+                               <th><center>Delete</center></th> </tr>" ;
         while($row = mysqli_fetch_array($query)){
           echo "<tr ><td class='text-center' >" .$row['date'] ." </td>
           <td><input type='button'  class='displayorder btn_delete' id=$row[order_id] value='View'></td> 
                      <td class='text-center' >" .$row['status'] ."</td>
                      <td class='text-center' >" .$row['amount'] ."</td>
                     " ;
-                     if ($row['status'] == "processing"){ 
+                     if ($row['status'] == "process"){ 
 
                       echo "<td> <a href='delete-order.php?delete=$row[order_id]  '> <input type='button' class='btn_delete' value='Delete'> </a></td>" ;
                        

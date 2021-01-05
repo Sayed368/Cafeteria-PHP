@@ -19,26 +19,26 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"> 
-            <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Users</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">My orders</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">checks</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">admin</a>
-            </li>
-        </ul>
+    <ul class="navbar-nav ml-auto">
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../AllProducts/all_product.php">Products</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link " href="#">orders</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="../checks/checks.php">checks</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link btn-danger" href="#">admin</a>
+                     </li>
+    </ul>
     </div>
 </nav>
 
@@ -76,8 +76,8 @@
                 <div class="card">
                     <div class="box">
                         <div class="img">
-                        <!-- <img src="<?php //echo '../users_images'.$row['img_name'] ?>"> -->
-                            <img src="tea.jpeg">
+                        <?php echo "<img class='product-img' alt='profile pic' src='../users_images/".$row['img_name']."'/>";?>
+                       
                         </div>
                         <h2>Name : <?php echo $row['user_name'] ?><br><span>date : <?php echo $row['date'] ?></span>
                             <span>room : <?php echo $row['room'] ?></span>
@@ -100,7 +100,7 @@
                         <div class="product-card">
                             <div class="row justify-content-around">
                                 <div class="col-5">
-                                <?php// echo "<img class='product-img' alt='profile pic' src='../product_images/".$row1['img_name']."'/>";?>
+                                <?php echo "<img class='product-img' alt='profile pic' src='../addProduct/images/".$row1['img_name']."'/>";?>
                                     <!-- <img class="product-img" src="coffee.jpg" alt=""> -->
                                 </div>
                                 <div class="col-6 product-detail">
@@ -136,7 +136,7 @@
             
             
 
-            <h2 class="p-4">Total :<?php echo $total." LE"?></h2>
+            <h2 class="p-4">Total :<?php echo $total." EGP"?></h2>
             
         </div>
        
@@ -210,7 +210,7 @@ $(document).ready(function() {
     $(".order-title").click(function(event) {
         event.preventDefault();
         var $target = $(event.target);
-        $(this).next().slideToggle(500);
+        $(this).next().slideToggle();
                         
     });
 

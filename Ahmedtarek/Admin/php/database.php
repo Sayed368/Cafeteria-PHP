@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost","root","","cafteria1");
+$conn = new mysqli("localhost","root","root","testorder");
 
 // Check connection
 if ($conn -> connect_errno) {

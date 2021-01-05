@@ -44,27 +44,23 @@
                </button>
                <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active"> 
-                        <a class="nav-link" href="#">Home</a>
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
                      </li>
-                     <li class="nav-item">
+                     <li class="nav-item active">
                         <a class="nav-link" href="#">Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Users</a>
+                        <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">My orders</a>
+                        <a class="nav-link" href="../sayed/view_order.php">orders</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">checks</a>
+                        <a class="nav-link" href="../checks/checks.php">checks</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">admin</a>
-                     </li>
-                  
-                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <a class="nav-link btn-danger" href="#">admin</a>
                      </li>
                   </ul>
                </div>
@@ -81,7 +77,7 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h1 class="pull-left">All Products </h1>
-                        <a href="#" class="btn btn-dark pull-right">Add New Product</a>
+                        <a href="../addProduct/addproduct.php" class="btn btn-dark pull-right">Add New Product</a>
                     </div>
                     <hr>
                     <?php
@@ -108,7 +104,7 @@
                                 "<td>" . $row["price"] . "</td>". 
 
                                 "<td>" . 
-                                "<img alt='profile pic' src= ".'../../addproduct/images/'.$row['img_name']." height=50 width=70 />"
+                                "<img alt='profile pic' src= ".'../addProduct/images/'.$row['img_name']." height=60 width=80 style='border-radius:50%;' />"
                                 ."</td>".
 
                                 "<td>" ."<a href='update.php?id=". $row['product_id'] ."' title='Update Record' 

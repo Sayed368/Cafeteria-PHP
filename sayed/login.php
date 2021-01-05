@@ -55,12 +55,14 @@ require_once('../function/db.php');
 
                             if($user_type=="admin")
                             {
-                                // header('Location: ../test/view_order.php');
+
+                                header('Location: ../Ahmedtarek/Admin/index.php');
                                 $success="helllo admin";
 
                             }
                             else{
-                                // header('Location: ../test/view_order.php');
+                               
+                                header('Location: ../Ahmedtarek/User/index.php');
                                 $success="helllo user";
 
                             }
@@ -132,7 +134,7 @@ require_once('../function/db.php');
                         
 
                         <div class="p-t-30">
-                            <button class="btn btn--radius btn--green" name="submit" type="submit">Add</button>
+                            <button class="btn btn--radius btn--green" name="submit" type="submit">Login</button>
                             <span class="text-danger ml-5" style="color: red; font-size: 16px;"><?php echo $error; ?></span>
                             <span class="text-danger ml-5" style="color: green; font-size: 16px;"><?php echo $success; ?></span>
                         </div>

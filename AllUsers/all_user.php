@@ -45,26 +45,23 @@
                </button>
                <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active"> 
-                        <a class="nav-link" href="#">Home</a>
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../AllProducts/all_product.php">Products</a>
                      </li>
-                     <li class="nav-item">
+                     <li class="nav-item active">
                         <a class="nav-link" href="#">Users</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">My orders</a>
+                        <a class="nav-link" href="../sayed/view_order.php">orders</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">checks</a>
+                        <a class="nav-link" href="../checks/checks.php">checks</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">admin</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <a class="nav-link btn-danger" href="#">admin</a>
                      </li>
                   </ul>
                </div>
@@ -82,7 +79,7 @@
                     <br><br><br>
                         <h1 class="pull-left">All Users </h1>
                         
-                        <a href="#" class="btn btn-dark pull-right">Add New User</a>
+                        <a href="../sayed/adduser.php" class="btn btn-dark pull-right">Add New User</a>
                  
                     </div>
                     <hr>
@@ -117,7 +114,7 @@
                                 "<td>" . 
 
 
-                                 "<img alt='profile pic' src= ".'../../users/'.$row['img_dir']." height=50 width=70 />"
+                                 "<img alt='profile pic' src= ".'../users_images/'.$row['img_dir']." style='border-radius:50%;' height=50 width=70 />"
 
                                 ."</td>" .
                                 "<td>" . $row["ext"] . "</td>". 

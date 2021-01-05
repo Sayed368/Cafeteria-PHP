@@ -2,8 +2,8 @@
 session_start();
 include "php/database.php";
 
-//$user_id = $_SESSION['user_id'];
-$user_id=11;
+$user_id = $_SESSION['user_id'];
+// $user_id=11;
 $sql = "SELECT * FROM `product`";
 $result = $conn->query($sql);
 
@@ -70,23 +70,23 @@ $conn->close();
                </button>
                <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active"> 
-                        <a class="nav-link" href="#">Home</a>
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../../home.php">Home</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="#">Order Now</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                     </li>
+                        <a class="nav-link" href="../../AhmedShuaib/newDP.php">My Orders</a>
+                     <!-- </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#l">Services</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
-                     </li>
+                     </li> -->
                      <li class="nav-item">
-                        <a class="nav-link btns-confirm btn" href="#">Ahmed</a>
+                        <a class="nav-link btns-confirm btn" href="#"><?php echo $_SESSION['user_name'];?></a>
                      </li>
                   </ul>
                </div>
@@ -145,7 +145,7 @@ $conn->close();
                             <div class="col-xl-3 col-lg-4 col-md-4">
                                 <div class="card p-3 bg-light">
                                     <h5>Order ID: <?php echo $start_order_id; ?></h5>
-                                    <img class="card-img-top" height="150" src="img/<?php echo $order['img_dir']; ?>"
+                                    <img class="card-img-top" height="150" src="../../addProduct/images/<?php echo $order['img_name']; ?>"
                                         alt="Card image cap">
                                     <div class="card-block text-center">
                                         <h4 class="card-title"><?php echo $order['name']; ?></h4>
@@ -178,7 +178,7 @@ $conn->close();
                             <div class="col-xl-3 col-lg-4 col-md-4">
                                 <div class="card p-3 bg-light">
                                 <p class="text-right"><span class="badge badge-pill btns-confirm"> EGP <?php echo $product['price']; ?></span></p>
-                                    <img class="card-img-top" height="150" src="img/<?php echo $product['img_dir']; ?>"
+                                    <img class="card-img-top" height="150" src="../../addProduct/images/<?php echo $product['img_name']; ?>"
                                         alt="Card image cap">
                                     <div class="card-block text-center">
                                         <h4 class="card-title"><?php echo $product['name']; ?></h4>
@@ -213,11 +213,11 @@ $conn->close();
                   <h3 class="useful_text">Menu</h3>
                   <div class="footer_menu">
                      <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
                      </ul>
                   </div>
                </div>

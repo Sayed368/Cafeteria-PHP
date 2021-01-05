@@ -27,7 +27,7 @@ if(isset($_POST['update']))
     $uploadfile=$_FILES['img'];
 	$filename=$uploadfile['name'];
 	$filetmpname=$uploadfile['tmp_name'];
-	$img_dir='../users/user_img/'.$filename;
+	$img_dir='../users_images/'.$filename;
 	$sql = "UPDATE `user_info` SET `user_name`='$name',`room_num`='$room',`img_name`='$filename',`img_dir`='$img_dir' ,`ext`='$ext' WHERE `user_id`=".$id;
     $result = $db->query($sql);
    

@@ -61,16 +61,16 @@ $conn->close();
                         <a class="nav-link" href="#">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="../../AllProducts/all_product.php">Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Users</a>
+                        <a class="nav-link" href="../../AllUsers/all_user.php">Users</a>
+                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../../sayed/view_order.php">orders</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">My orders</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">checks</a>
+                        <a class="nav-link" href="../../checks/checks.php">checks</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link btns-confirm" href="#">admin</a>
@@ -140,7 +140,7 @@ $conn->close();
                             <?php foreach($products as $product){ ?>
                             <div class="col-xl-3 col-lg-4 col-md-4">
                                 <div class="card p-3 bg-light">
-                                    <img class="card-img-top" height="150" src="img/<?php echo $product['img_dir']; ?>"
+                                    <img class="card-img-top" height="150" src="../../addProduct/images/<?php echo $product['img_name']; ?>"
                                         alt="Card image cap">
                                     <div class="card-block text-center">
                                         <h4 class="card-title"><?php echo $product['name']; ?></h4>
@@ -174,11 +174,11 @@ $conn->close();
                   <h3 class="useful_text">Menu</h3>
                   <div class="footer_menu">
                      <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
                      </ul>
                   </div>
                </div>
