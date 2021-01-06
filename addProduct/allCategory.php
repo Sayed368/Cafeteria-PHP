@@ -1,60 +1,17 @@
-<?php require_once("../function/db.php"); 
-
-?> 
-
-<?php 
-
-
-// Check if form is submitted for user update, then redirect to homepage after update
-if(isset($_POST['update']))
-{
-	$id = $_POST['product_id'];
-    $name=$_POST['name'];
-	$price=$_POST['price'];
-
-   // $img=$_FILES['img_name']['name'];
-   $uploadfile=$_FILES['img'];
-   $filename=$uploadfile['name'];
-   $filetmpname=$uploadfile['tmp_name'];
-   $img_dir='../addProduct/images/'.$filename;
-
-	// update user data
-	$sql = "UPDATE `product` SET `name`='$name',`price`='$price',`img_name`='$filename',`img_dir`='$img_dir'   WHERE `product_id`=".$id;
-    $result = $db->query($sql);
-    move_uploaded_file($filetmpname,$img_dir);
-	// Redirect to homepage to display updated user in list
-	header("Location: all_product.php");
-}
-
+<?php require_once("../function/db.php");  
+;
 
 ?>
-<?php
-// Display selected user data based on id
-// Getting id from url
-$product_id = $_GET['id'];
-    $sql = "SELECT `name`,`price` FROM `product` WHERE `product_id`=".$product_id;
-    $stmt=$db->prepare($sql);
-    $result=$stmt->execute();
-    // var_dump($result);
-    $numrows=$stmt->rowCount();
 
-    $rows=$stmt->fetchAll(PDO::FETCH_ASSOC); #stmt fetch
-      // var_dump($rows);
-        $name=$rows[0]['name'];
-        $price = $rows[0]['price'];
-        //$img = $rows[0]['img_name'];
-
-?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
 <head>
       <!-- basic -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- site metas -->
-      <title>All Users</title>
+      <title>All categories</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -63,16 +20,21 @@ $product_id = $_GET['id'];
       <!-- style css -->
       <link rel="stylesheet" type="text/css" href="../css/style.css">
       <link rel="stylesheet" type="text/css" href="../css/style1.css">
+      
       <!-- Responsive-->
       <link rel="stylesheet" href="../css/responsive.css">
      
-      
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-     
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="../css/owl.carousel.min.css">
+      <link rel="stylesheet" href="../css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    
     </head>
-    <body style="background-image: url('https://secure.static.tumblr.com/c69c1abeb6981723f568c6b2884d62d5/antrfuo/cs3n6zp96/tumblr_static_coffee-beans-string.jpg');background-repeat:no-repeat;background-size:1800px;">
+    <body style="background-image: url('https://secure.static.tumblr.com/c69c1abeb6981723f568c6b2884d62d5/antrfuo/cs3n6zp96/tumblr_static_coffee-beans-string.jpg');background-repeat:no-repeat;background-size:1700px;">
       <!--header section start -->
       <div class="header_section">
          <div class="container-fluid">
@@ -86,57 +48,82 @@ $product_id = $_GET['id'];
                      <li class="nav-item "> 
                         <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
                      </li>
-                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Products</a>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../AllProducts/all_product.php">Products</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
                      </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="#">Categories</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link " href="../sayed/view_order.php">orders</a>
+                     </li>
                      <li class="nav-item ">
-                        <a class="nav-link" href="../addProduct/allCategory.php">Categories</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="../sayed/view_order.php">orders</a>
-                     </li>
-                     <li class="nav-item">
                         <a class="nav-link" href="../checks/checks.php">checks</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link btn-danger" href="#">admin</a>
                      </li>
-                  </ul>
+               </ul>
                </div>
             </nav>
          </div>
       </div>
       <!--header section end -->
-      
-<div class="about_section layout_padding">
-    
-<div class="col-sm-6 offset-sm-3 border p-3" >
-        <h2 class="text-center p-3 bg-light text-dark"><b>Update Product</b></h2>
-        <form  method="post" action="update.php" enctype="multipart/form-data">
-        <input type="hidden" name="product_id" value=<?php echo $_GET['id'];?> class="form-control" >
-            <div class="form-group">
-                <label class="text-dark" ><b>Name</b> </label>
-                <input type="text" name="name" value=<?php echo $name;?> class="form-control" >
+      <!-- about section start -->
+ 
 
-            </div>
+      <div class="about_section layout_padding">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header clearfix">
+                        <h1 class="pull-left">All categories </h1>
+                        <a href="addcategories.php" class="btn btn-dark pull-right">Add New categroy</a>
+                    </div>
+                    <hr>
+                    <?php
+                          $selQry="select `cat_id`,`cat_name` from categories";
+                          $stmt=$db->prepare($selQry);
+                          $res=$stmt->execute();
+                          #fetch the result
+                        $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
+                       
+                        echo "<table class='table table-dark table-bordered '> 
+                              <thead>
+                                    <tr> 
+                                        <th> category id</th>
+                                        <th>category name </th>
+                                       
+                                        <th colspan='2'><center> Action</center></th>
+                                      </tr>
+                                    </thead>";
+                        foreach($rows as $row) {
 
-			<div class="form-group">
-                <label class="text-dark" ><b>price</b> </label>
-                <input type="text" name="price" value=<?php echo $price;?> class="form-control" >
-            </div>
-            <div class="form-group">
-                <label class="text-dark"  ><b>Image</b> </label>
-                <input type="file" name="img" class="form-control" >
-            </div>
+                            echo "<tr>
+                                <td>" . $row["cat_id"] . "</td>" .
 
+                                "<td>" . $row["cat_name"] . "</td>". 
 
-            <input class="edit_btn" type="submit" name="update" value="Update">
-        </form>
-        </div> 
-    
+                                "<td>" ."<a href='edit.php?id=". $row['cat_id'] ."' title='Update Record' 
+                                class='btn btn-dark edit_btn'>Edit</a>"."</td>".
+                                "<td>" . 
+                                "<a href='delete.php?id=". $row['cat_id'] ."' title='Delete Record' 
+                                class='btn btn-dark del_btn'>Delete</a>"
+
+                                ."</td>
+                                </tr>";
+
+                        }
+                        echo "</table>";
+     
+                    ?>
+ </div>
+            </div>        
+        </div>
+        </div>
       </div>
       <!-- about section end -->
       <!-- footer section start -->
@@ -213,4 +200,3 @@ $product_id = $_GET['id'];
       <script src="../js/custom.js"></script>     
    </body>
 </html>
-

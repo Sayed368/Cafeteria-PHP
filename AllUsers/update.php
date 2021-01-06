@@ -99,26 +99,26 @@ if(isset($_POST['update']))
                </button>
                <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active"> 
-                        <a class="nav-link" href="#">Home</a>
+                     <li class="nav-item "> 
+                        <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../AllProducts/all_product.php">Products</a>
                      </li>
-                     <li class="nav-item">
+                     <li class="nav-item active">
                         <a class="nav-link" href="#">Users</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">My orders</a>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../addProduct/allCategory.php">Categories</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">checks</a>
+                        <a class="nav-link" href="../sayed/view_order.php">orders</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">admin</a>
+                        <a class="nav-link" href="../checks/checks.php">checks</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <a class="nav-link btn-danger" href="#">admin</a>
                      </li>
                   </ul>
                </div>

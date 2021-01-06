@@ -573,7 +573,10 @@ a {
 
 /* header section end */
 
+.active .nav-link{
+  color: #f76d37 !important;
 
+}
 
 .gallery_taital {
   width: 100%;

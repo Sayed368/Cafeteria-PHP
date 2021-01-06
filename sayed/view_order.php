@@ -29,8 +29,11 @@
                      <li class="nav-item">
                         <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
                      </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../addProduct/allCategory.php">Categories</a>
+                     </li>
                      <li class="nav-item active">
-                        <a class="nav-link " href="#">orders</a>
+                        <a class="nav-link  " href="#">orders</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="../checks/checks.php">checks</a>

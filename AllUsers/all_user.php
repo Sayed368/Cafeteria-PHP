@@ -54,6 +54,9 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="#">Users</a>
                      </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../addProduct/allCategory.php">Categories</a>
+                     </li>
                      <li class="nav-item">
                         <a class="nav-link" href="../sayed/view_order.php">orders</a>
                      </li>

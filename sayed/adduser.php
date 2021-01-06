@@ -169,6 +169,9 @@ require_once('../function/db.php');
                      <li class="nav-item active">
                         <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
                      </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="../addProduct/allCategory.php">Categories</a>
+                     </li>
                      <li class="nav-item">
                         <a class="nav-link" href="view_order.php">orders</a>
                      </li>
