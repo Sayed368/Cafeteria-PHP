@@ -43,7 +43,7 @@
                         <a class="nav-link " href="../sayed/view_order.php">orders</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">checks</a>
+                        <a class="nav-link" href="checks.php">checks</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link btn-danger" href="#">admin</a>

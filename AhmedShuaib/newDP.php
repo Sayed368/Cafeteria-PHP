@@ -50,7 +50,7 @@ session_start();
                         <a class="nav-link" href="../Ahmedtarek/User/index.php">Order Now</a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">My Orders</a>
+                        <a class="nav-link" href="newDP.php">My Orders</a>
                      </li>
                      <!-- <li class="nav-item">
                         <a class="nav-link" href="#">My orders</a>

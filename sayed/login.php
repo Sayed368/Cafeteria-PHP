@@ -99,7 +99,7 @@ require_once('../function/db.php');
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title></title>
+    <title>Login</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">

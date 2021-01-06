@@ -51,11 +51,14 @@ if(isset($_POST['submit']))
                      <li class="nav-item "> 
                         <a class="nav-link" href="../Ahmedtarek/Admin/index.php">Home</a>
                      </li>
-                     <li class="nav-item active">
+                     <li class="nav-item ">
                         <a class="nav-link" href="../AllProducts/all_product.php">Products</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="../AllUsers/all_user.php">Users</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="allCategory.php">Categories</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link " href="../sayed/view_order.php">orders</a>

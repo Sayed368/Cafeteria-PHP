@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 05, 2021 at 10:54 PM
+-- Generation Time: Jan 06, 2021 at 07:28 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `cat_id` int NOT NULL AUTO_INCREMENT,
   `cat_name` varchar(30) NOT NULL,
   PRIMARY KEY (`cat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `categories`
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `order_info` (
   `amount` int DEFAULT NULL,
   PRIMARY KEY (`order_id`),
   KEY `user_fk` (`user_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order_info`
@@ -69,10 +69,14 @@ CREATE TABLE IF NOT EXISTS `order_info` (
 
 INSERT INTO `order_info` (`order_id`, `status`, `user_fk`, `date`, `room`, `note`, `amount`) VALUES
 (52, 'done', 38, '2021-01-05 21:28:46', '8', 'hello', 60),
-(53, 'done', 38, '2021-01-05 21:29:16', '8', 'aaaaa', 25),
-(54, 'process', 34, '2021-01-05 21:31:12', '1', 'www', 20),
+(53, 'delivery', 38, '2021-01-05 21:29:16', '8', 'aaaaa', 25),
+(54, 'delivery', 34, '2021-01-05 21:31:12', '1', 'www', 20),
 (55, 'process', 37, '2021-01-05 22:12:33', '3', 'hello my first order', 60),
-(56, 'process', 35, '2021-01-06 00:23:00', '5', 'hello admin', 110);
+(56, 'process', 35, '2021-01-06 00:23:00', '5', 'hello admin', 110),
+(57, 'delivery', 36, '2021-01-06 01:02:25', '3', 'aaaaaa', 255),
+(59, 'delivery', 36, '2021-01-06 14:28:34', '3', 'jjjjjjjjjj', 80),
+(62, 'done', 39, '2021-01-06 15:25:47', '1', '', 110),
+(64, 'process', 35, '2021-01-06 20:42:27', '5', 'hello', 120);
 
 -- --------------------------------------------------------
 
@@ -104,7 +108,20 @@ INSERT INTO `order_product` (`order_fk`, `product_fk`, `count`) VALUES
 (55, 9, 1),
 (55, 10, 1),
 (56, 12, 1),
-(56, 15, 1);
+(56, 15, 1),
+(57, 9, 2),
+(57, 10, 1),
+(57, 16, 1),
+(57, 17, 1),
+(57, 18, 1),
+(57, 19, 1),
+(57, 20, 1),
+(59, 17, 1),
+(59, 19, 1),
+(62, 12, 1),
+(62, 13, 1),
+(64, 16, 2),
+(64, 18, 1);
 
 -- --------------------------------------------------------
 
@@ -133,10 +150,10 @@ INSERT INTO `product` (`product_id`, `name`, `price`, `img_name`, `img_dir`, `ca
 (8, 'Tea', 10, 'tea.jpeg', 'images/tea.jpeg', NULL),
 (9, 'mango', 30, 'download.jpg', 'images/download.jpg', NULL),
 (10, 'water', 5, '1.jpg', 'images/1.jpg', NULL),
-(12, 'milk shake', 50, 'milk.jpg', 'images/milk.jpg', NULL),
-(13, 'molten cake', 60, 'moltencack.jpg', '../addProduct/images/moltencack.jpg', NULL),
-(14, 'cheese cake', 70, 'cheese.jpg', '../addProduct/images/cheese.jpg', NULL),
-(15, 'ice cream', 60, 'ice.jpg', '../addProduct/images/ice.jpg', NULL),
+(12, 'milkShake', 50, 'milk.jpg', '../addProduct/images/milk.jpg', NULL),
+(13, 'moltenCake', 60, 'moltencack.jpg', '../addProduct/images/moltencack.jpg', NULL),
+(14, 'cheeseCake', 70, 'cheese.jpg', '../addProduct/images/cheese.jpg', NULL),
+(15, 'iceCream', 60, 'ice.jpg', '../addProduct/images/ice.jpg', NULL),
 (16, 'frappuccino', 40, 'flab.jpg', 'images/flab.jpg', NULL),
 (17, 'cola', 30, 'cola.png', 'images/cola.png', NULL),
 (18, 'orange', 40, 'orange.jpg', 'images/orange.jpg', NULL),
@@ -162,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `type` enum('admin','user') NOT NULL DEFAULT 'user',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_info`
